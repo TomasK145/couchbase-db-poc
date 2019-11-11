@@ -12,3 +12,7 @@ services:
     build:
       context: .
       dockerfile: HelloMicroservice/Dockerfile
+    environment:
+      Couchbase__Servers__0: http://couchbase:8091/ # Reference to the "couchbase" service name on line 4
+    depends_on:
+    - couchbase # Reference to the "couchbase" service name on line 4
